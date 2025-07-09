@@ -334,7 +334,7 @@ with tab7:
         st.info("🔒 Najpierw znajdź odpowiedni numer gryzonia aby odblokować tą sekcję.")
 
 with tab8:
-    if not st.session_state.unlocked[5]:
+    if st.session_state.unlocked[5]:
         st.markdown("<h2 style='text-align: center;'>🎁 Rozdział 7 - Prezent</h1>", unsafe_allow_html=True)
         st.markdown("""
         # 🎉 GRATULACJE! 🐭

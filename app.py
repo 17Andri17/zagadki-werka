@@ -129,10 +129,28 @@ Jeśli trafisz dobrze, nie oczekuj zwykłej rozmowy – nasi koledzy są ostroż
                 """
                 st.markdown(audio_html, unsafe_allow_html=True)
             elif phone_number.strip() == "371-013-140":
-                st.success("Tajny numer użyty!")
-                st.markdown("""
-                <meta http-equiv="refresh" content="1; url=https://github.com/17Andri17/zagadki-werka/blob/main/zaproszenie.png" />
-                """, unsafe_allow_html=True)
+                st.markdown(
+                    """
+                    <div style="text-align: center; margin-top: 30px;">
+                        <h2>🎉 Gratulacje! 🎉</h2>
+                        <p>Kliknij poniższy przycisk, aby zobaczyć swój prezent 🎁:</p>
+                        <a href="https://raw.githubusercontent.com/17Andri17/zagadki-werka/main/zaproszenie.png" target="_blank" 
+                        style="
+                            display: inline-block;
+                            padding: 12px 24px;
+                            font-size: 18px;
+                            color: white;
+                            background-color: #4CAF50;
+                            border-radius: 8px;
+                            text-decoration: none;
+                            font-weight: bold;
+                        ">
+                        Otwórz prezent
+                        </a>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
+                )
             elif phone_number.strip() == "":
                 st.error("Musisz wpisać jakiś numer.")
             else:

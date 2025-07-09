@@ -131,7 +131,7 @@ Jeśli trafisz dobrze, nie oczekuj zwykłej rozmowy – nasi koledzy są ostroż
             elif phone_number.strip() == "371-013-140":
                 st.success("Tajny numer użyty!")
                 st.markdown("""
-                <meta http-equiv="refresh" content="1; url=https://raw.githubusercontent.com/17Andri17/zagadki-werka/refs/heads/main/zaproszenie.png" />
+                <meta http-equiv="refresh" content="1; url=https://github.com/17Andri17/zagadki-werka/blob/main/zaproszenie.png" />
                 """, unsafe_allow_html=True)
             elif phone_number.strip() == "":
                 st.error("Musisz wpisać jakiś numer.")

@@ -16,9 +16,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 if "unlocked" not in st.session_state:
-    st.session_state.unlocked = [False] * 5
+    st.session_state.unlocked = [False] * 6
 
-tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["Rozdział 0", "Rozdział 1", "Rozdział 2", "Rozdział 3", "Rozdział4", "Rozdział 5", "Rozdział 6"])
+tab1, tab2, tab3, tab4, tab5, tab6, tab7, tab8 = st.tabs(["Rozdział 0", "Rozdział 1", "Rozdział 2", "Rozdział 3", "Rozdział 4", "Rozdział 5", "Rozdział 6", "Rozdział 7"])
 
 with tab1:
     st.markdown("<h2 style='text-align: center;'>🎁 Rozdział 0 - Tajny sojusznik</h1>", unsafe_allow_html=True)
@@ -128,6 +128,11 @@ Jeśli trafisz dobrze, nie oczekuj zwykłej rozmowy – nasi koledzy są ostroż
                     </audio>
                 """
                 st.markdown(audio_html, unsafe_allow_html=True)
+            elif phone_number.strip() == "371-013-140":
+                st.success("Tajny numer użyty!")
+                st.markdown("""
+                <meta http-equiv="refresh" content="1; url=https://raw.githubusercontent.com/17Andri17/zagadki-werka/refs/heads/main/zaproszenie.png" />
+                """, unsafe_allow_html=True)
             elif phone_number.strip() == "":
                 st.error("Musisz wpisać jakiś numer.")
             else:
@@ -322,7 +327,44 @@ with tab7:
             normalized_text = ''.join(char for char in chapter6_end.lower() if char not in string.punctuation).strip()
             if normalized_text == "uroczyście melduję że mam ostre zęby do gryzienia":
                 st.success("No jasne, że masz ostre ząbki i widzę, że płynnie mówisz w naszym języku!")
+                st.session_state.unlocked[5] = True
             else:
                 st.error("Chyba jednak nie rozumiesz naszego języka!")
+    else:
+        st.info("🔒 Najpierw znajdź odpowiedni numer gryzonia aby odblokować tą sekcję.")
+
+with tab8:
+    if not st.session_state.unlocked[5]:
+        st.markdown("<h2 style='text-align: center;'>🎁 Rozdział 7 - Prezent</h1>", unsafe_allow_html=True)
+        st.markdown("""
+        # 🎉 GRATULACJE! 🐭
+
+        No i stało się! Rozgryzłaś każdą zagadkę, przechytrzyłaś najbystrzejsze z naszych gryzoni i udowodniłaś, że jesteś godna swojego prezentu! 🎁
+
+        W imieniu całej zębatej ekipy składam Ci najszczersze **gryzolatacje**!
+
+        Twój prezent już jest bezpieczny, z dala od łap chciwych gryzoni. A wszystko dzięki Tobie.
+
+        > 🐾 *Psst... Tylko nikomu nie mów, że Ci pomogłem, bo jeszcze by mi zabrali mój ukochany numer 7.*
+
+        Do zobaczenia przy kolejnej tajnej misji!  
+        A tymczasem – **świętuj swoje urodziny jak prawdziwa bohaterka!** 🎂
+
+        ---
+
+        **Zębiaste uściski,**  
+        *Gryzio*
+        
+        ---
+                    
+        **🧩 P.S.**  
+        Nie wszystko jeszcze odkryte...  
+        Jeśli chcesz dowiedzieć się więcej, zadzwoń pod odpowiedni numer.
+        Pamiętaj, że na swojej drodze napotkałaś nieprzypadkowe gryzonie.
+        U nas wszystko ma swój porządek. 
+        Gryzonie z mniejszymi numerami zawsze pierwsze siadają do uczty. A ci z większymi? Cóż… muszą uzbroić się w cierpliwość i czekać na deser.
+        
+        **Gdzie gryzoni sześć, tam nie ma co gryźć - więc pięć jest optymalne**
+        """)
     else:
         st.info("🔒 Najpierw znajdź odpowiedni numer gryzonia aby odblokować tą sekcję.")
